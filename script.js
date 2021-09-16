@@ -35,6 +35,15 @@ computer.onclick = function(){playerInitial('computer')};
 var checkFilling = [0,0,0,0,0,0,0,0,0];
 var signsOfBoxes = ['_','_','_','_','_','_','_','_','_'];
 
+const box1 = document.getElementById('topleft');
+const box2 = document.getElementById('top');
+const box3 = document.getElementById('topright');
+const box4 = document.getElementById('left');
+const box5 = document.getElementById('middle');
+const box6 = document.getElementById('right');
+const box7 = document.getElementById('bottomleft');
+const box8 = document.getElementById('bottom');
+const box9 = document.getElementById('bottomright');
 
 function playerInitial(p){
     player = p;
@@ -157,15 +166,61 @@ function hide(){
 /*********************************************************************************** */
 function two_playersgame(){
     turn.innerHTML = initialSign + "'s turn";
-    document.getElementById('topleft').onclick = function() {myfunction('topleft')};
-    document.getElementById('top').onclick = function() {myfunction('top')};
-    document.getElementById('topright').onclick = function() {myfunction('topright')};
-    document.getElementById('left').onclick = function() {myfunction('left')};
-    document.getElementById('middle').onclick = function() {myfunction('middle')};
-    document.getElementById('right').onclick = function() {myfunction('right')};
-    document.getElementById('bottomleft').onclick = function() {myfunction('bottomleft')};
-    document.getElementById('bottom').onclick = function() {myfunction('bottom')};
-    document.getElementById('bottomright').onclick = function() {myfunction('bottomright')};
+    box1.onclick = function() {myfunction('topleft')};
+    box2.onclick = function() {myfunction('top')};
+    box3.onclick = function() {myfunction('topright')};
+    box4.onclick = function() {myfunction('left')};
+    box5.onclick = function() {myfunction('middle')};
+    box6.onclick = function() {myfunction('right')};
+    box7.onclick = function() {myfunction('bottomleft')};
+    box8.onclick = function() {myfunction('bottom')};
+    box9.onclick = function() {myfunction('bottomright')};
+}
+function Xwon(){
+    result.style.visibility = "visible";
+    if(typeof(player1name) == 'object' || typeof(player2name) == 'object')
+    {
+        result.innerHTML = "X won";
+    }
+    else{
+        result.innerHTML = player1name + " won";
+    }
+    for(var i=0; i<9; i++) checkFilling[i]=1;
+    if(!wasResult) scoreX+=1;
+    if(typeof(player1name) == 'object' || typeof(player2name) == 'object' || (player1name.length>10 || player2name.length>10))
+    {
+        x_score.innerHTML = "X's score: " + scoreX;
+    }
+    else{
+        x_score.innerHTML = player1name + "'s score: " +    scoreX;
+    }
+    home[0].style.visibility = "visible";
+    wasResult = true;
+    turn.style.visibility = "hidden";
+}
+function Owon(){
+    result.style.visibility = "visible";
+    if(typeof(player1name) === 'object' || typeof(player2name) === 'object')
+    {
+        result.innerHTML = "O won";
+    }
+    else{
+        result.innerHTML = player2name + " won";
+    }
+    for(var i=0; i<9; i++) checkFilling[i]=1;
+    if(!wasResult) scoreO+=1;
+    
+    if(typeof(player1name) === 'object' || typeof(player2name) === 'object' || (player1name.length>10 || player2name.length>10))
+    {
+        o_score.innerHTML = "O's score: " + scoreO;
+    }
+    else{
+        o_score.innerHTML = player2name + "'s score: " + scoreO;
+    }
+    home[0].style.visibility = "visible";
+    wasResult = true;
+    turn.innerHTML = initialSign +"'s turn";
+    turn.style.visibility = "hidden";   
 }
 function myfunction(x){
     if(x == "topleft"){
@@ -269,32 +324,7 @@ function myfunction(x){
     ((signsOfBoxes[0] == 'O')  && signsOfBoxes[0] == signsOfBoxes[4] && signsOfBoxes[4] == signsOfBoxes[8])||
     ((signsOfBoxes[2] == 'O')  && signsOfBoxes[2] == signsOfBoxes[4] && signsOfBoxes[4] == signsOfBoxes[6]))
     {
-        result.style.visibility = "visible";
-        if(typeof(player1name) === 'object' || typeof(player2name) === 'object')
-        {
-            result.innerHTML = "O won";
-        }
-        else{
-            result.innerHTML = player2name + " won";
-        }
-        for(var i=0; i<9; i++) checkFilling[i]=1;
-        if(!wasResult) scoreO+=1;
-
-        
-
-
-        if(typeof(player1name) === 'object' || typeof(player2name) === 'object' || (player1name.length>10 || player2name.length>10))
-        {
-            o_score.innerHTML = "O's score: " + scoreO;
-        }
-        else{
-            o_score.innerHTML = player2name + "'s score: " + scoreO;
-        }
-        home[0].style.visibility = "visible";
-        wasResult = true;
-        turn.innerHTML = initialSign +"'s turn";
-        turn.style.visibility = "hidden";
-        
+        Owon();  
     }
     else if(
         ((signsOfBoxes[0] == 'X')  && signsOfBoxes[0] == signsOfBoxes[3] && signsOfBoxes[3] == signsOfBoxes[6])||
@@ -306,27 +336,7 @@ function myfunction(x){
         ((signsOfBoxes[0] == 'X')  && signsOfBoxes[0] == signsOfBoxes[4] && signsOfBoxes[4] == signsOfBoxes[8])||
         ((signsOfBoxes[2] == 'X')  && signsOfBoxes[2] == signsOfBoxes[4] && signsOfBoxes[4] == signsOfBoxes[6]))
         {
-            result.style.visibility = "visible";
-            if(typeof(player1name) == 'object' || typeof(player2name) == 'object')
-            {
-                result.innerHTML = "X won";
-            }
-            else{
-                result.innerHTML = player1name + " won";
-            }
-            for(var i=0; i<9; i++) checkFilling[i]=1;
-            if(!wasResult) scoreX+=1;
-
-            if(typeof(player1name) == 'object' || typeof(player2name) == 'object' || (player1name.length>10 || player2name.length>10))
-            {
-                x_score.innerHTML = "X's score: " + scoreX;
-            }
-            else{
-                x_score.innerHTML = player1name + "'s score: " +    scoreX;
-            }
-            home[0].style.visibility = "visible";
-            wasResult = true;
-            turn.style.visibility = "hidden";
+            Xwon();
 
         }
         let countnumberOfmoves = 0;
@@ -344,15 +354,15 @@ reset[0].onclick = function() {resetall()};
 function resetall(){
     home[0].style.visibility = "hidden";
     for(var i=0; i<9; i++) checkFilling[i]=0;
-    document.getElementById('topleft').innerHTML="";
-    document.getElementById('top').innerHTML="";
-    document.getElementById('topright').innerHTML="";
-    document.getElementById('left').innerHTML="";
-    document.getElementById('middle').innerHTML="";
-    document.getElementById('right').innerHTML="";
-    document.getElementById('bottomleft').innerHTML="";
-    document.getElementById('bottom').innerHTML="";
-    document.getElementById('bottomright').innerHTML="";
+    box1.innerHTML="";
+    box2.innerHTML="";
+    box3.innerHTML="";
+    box4.innerHTML="";
+    box5.innerHTML="";
+    box6.innerHTML="";
+    box7.innerHTML="";
+    box8.innerHTML="";
+    box9.innerHTML="";
     result.style.visibility = "hidden";
     
     for(var i=0; i<9; i++) signsOfBoxes[i] = "P";
@@ -380,7 +390,7 @@ home[0].onclick = function(){goTohome()};
 var board = [ [ '_', '_', '_' ],
     			[ '_', '_', '_' ],
     			[ '_', '_', '_' ] ];
-function robodekhle(){
+function roboPlays(){
     class Move
     {
     	constructor()
@@ -542,46 +552,46 @@ function robodekhle(){
 
     if(bestMove.row == 0 && bestMove.col==0) {
         checkFilling[0] = 1;
-        document.getElementById('topleft').innerHTML = 'X';
+        box1.innerHTML = 'X';
         return;
     }
     else if(bestMove.row == 0 && bestMove.col==1) {
         checkFilling[1] = 1;
-        document.getElementById('top').innerHTML = 'X';
+        box2.innerHTML = 'X';
         return;
     }
     else if(bestMove.row == 0 && bestMove.col==2) {
         checkFilling[2] = 1;
-        document.getElementById('topright').innerHTML = 'X';
+        box3.innerHTML = 'X';
         return;
     }
     else if(bestMove.row == 1 && bestMove.col==0) {
         checkFilling[3] = 1;
-        document.getElementById('left').innerHTML = 'X';
+        box4.innerHTML = 'X';
         return;
     }
     else if(bestMove.row == 1 && bestMove.col==1) {
         checkFilling[4] = 1;
-        document.getElementById('middle').innerHTML = 'X';
+        box5.innerHTML = 'X';
         return;
     }
     else if(bestMove.row == 1 && bestMove.col==2) {
         checkFilling[5] = 1;
-        document.getElementById('right').innerHTML = 'X';
+        box6.innerHTML = 'X';
     }
     else if(bestMove.row == 2 && bestMove.col==0) {
         checkFilling[6] = 1;
-        document.getElementById('bottomleft').innerHTML = 'X';
+        box7.innerHTML = 'X';
         return;
     }
     else if(bestMove.row == 2 && bestMove.col==1) {
         checkFilling[7] = 1;
-        document.getElementById('bottom').innerHTML = 'X';
+        box8.innerHTML = 'X';
         return;
     }
     else if(bestMove.row == 2 && bestMove.col==2) {
         checkFilling[8] = 1;
-        document.getElementById('bottomright').innerHTML = 'X';
+        box9.innerHTML = 'X';
         return;
     }
     checkifWon();
@@ -681,7 +691,7 @@ function checkifWon(){
 function one_playergame(){
     if(initialSign == 'O')
     {
-        robodekhle();
+        roboPlays();
         player();
     }
     else{
@@ -696,7 +706,7 @@ function one_playergame(){
                 document.getElementById('topleft').innerHTML = 'O';
                 board[0][0] = 'O';
                 checkFilling[0]=1;
-                robodekhle();
+                roboPlays();
                 checkifWon();
             }
         });
@@ -705,7 +715,7 @@ function one_playergame(){
                 document.getElementById('top').innerHTML = 'O';
                 board[0][1] = 'O';
                 checkFilling[1]=1;
-                robodekhle();
+                roboPlays();
                 checkifWon();
             }
         });
@@ -714,7 +724,7 @@ function one_playergame(){
                 document.getElementById('topright').innerHTML = 'O';
                 board[0][2] = 'O';
                 checkFilling[2]=1;
-                robodekhle();
+                roboPlays();
                 checkifWon();
             }
         });
@@ -723,7 +733,7 @@ function one_playergame(){
                 document.getElementById('left').innerHTML = 'O';
                 board[1][0] = 'O';
                 checkFilling[3]=1;
-                robodekhle();
+                roboPlays();
                 checkifWon();
             }
         });
@@ -732,7 +742,7 @@ function one_playergame(){
                 document.getElementById('middle').innerHTML = 'O';
                 board[1][1] = 'O';
                 checkFilling[4]=1;
-                robodekhle();
+                roboPlays();
                 checkifWon();
             }
         });
@@ -741,7 +751,7 @@ function one_playergame(){
                 document.getElementById('right').innerHTML = 'O';
                 board[1][2] = 'O';
                 checkFilling[5]=1;
-                robodekhle();
+                roboPlays();
                 checkifWon();
             }
         });
@@ -750,7 +760,7 @@ function one_playergame(){
                 document.getElementById('bottomleft').innerHTML = 'O';
                 board[2][0] = 'O';
                 checkFilling[6]=1;
-                robodekhle();
+                roboPlays();
                 checkifWon();
             }
         });
@@ -759,7 +769,7 @@ function one_playergame(){
                 document.getElementById('bottom').innerHTML = 'O';
                 board[2][1] = 'O';
                 checkFilling[7]=1;
-                robodekhle();
+                roboPlays();
                 checkifWon();
             }
         });
@@ -768,7 +778,7 @@ function one_playergame(){
                 document.getElementById('bottomright').innerHTML = 'O';
                 board[2][2] = 'O';
                 checkFilling[8]=1;
-                robodekhle();
+                roboPlays();
                 checkifWon();
             }
         });
