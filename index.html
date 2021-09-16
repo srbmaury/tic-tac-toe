@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Tic Tac Toe Game</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <div class="bg-image"></div>
-  <div id="select-box">
+  <div id="select-box" class=" ">
     <header>Tic Tac Toe</header>
     <div class="content" id="players2">
       <div class="title">Play versus</div>
@@ -47,17 +47,17 @@
       <div class="box" id="bottomleft"></div>
       <div class="box" id="bottom"></div>
       <div class="box" id="bottomright"></div>
-      <img src="img3.png" id="mute" alt="mute">
-
+      <img src="../static/images/img2.png" alt="mute" id="mute" class="">
+      <a onclick = 'muteUnmute()' id="mutebutton">on</a>
     </div>
     <div>
       <button class = "reset ">Reset</button>
       <button class = "home">Home</button>
     </div>
 
-  </div> 
-  <audio src="music1.wav" id="music1"></audio>
-  <script src="script.js"></script>
+  </div>
+  <audio src="../static/audio/music1.wav" id="music1"></audio>
+  <script src="../javascript/script.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 </html>

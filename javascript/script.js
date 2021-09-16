@@ -45,6 +45,7 @@ const box7 = document.getElementById('bottomleft');
 const box8 = document.getElementById('bottom');
 const box9 = document.getElementById('bottomright');
 
+var resultDeclared = false;
 const audio1 = document.getElementById('music1');
 function playerInitial(p){
     player = p;
@@ -163,21 +164,28 @@ function hide(){
 }
 
 function audioPlay(){
-    audio1.pause();
-    audio1.play();
+    if(!resultDeclared && !resHide){
+        audio1.pause();
+        audio1.play();
+    }
 }
 
 var mute = document.getElementById('mute');
-
+var mutebutton = document.getElementById('mutebutton');
+mute.onclick = function(){muteUnmute()};
 function muteUnmute(){
-    if(mute.src == "img2.png"){
-        mute.src = "img3.png";
+    if(mute.className == ""){
+        mutebutton.innerHTML = "off";
+        mute.className="fullvolume";
     }
     else{
-        mute.src = "img2.png";
+        mutebutton.innerHTML = "on";
+        mute.className="";
     }
+    console.log();
     (audio1.muted == true) ? (audio1.muted = false) : (audio1.muted = true);
 }
+
 /*********************************************************************************** */
 function two_playersgame(){
     turn.innerHTML = initialSign + "'s turn";
@@ -192,6 +200,8 @@ function two_playersgame(){
     box9.onclick = function() {myfunction('bottomright')};
 }
 function Xwon(){
+    mute.style.visibility = "hidden";
+    mutebutton.style.visibility = "hidden";
     result.style.visibility = "visible";
     if(typeof(player1name) == 'object' || typeof(player2name) == 'object')
     {
@@ -212,8 +222,11 @@ function Xwon(){
     home[0].style.visibility = "visible";
     wasResult = true;
     turn.style.visibility = "hidden";
+    resultDeclared = true;
 }
 function Owon(){
+    mute.style.visibility = "hidden";
+    mutebutton.style.visibility = "hidden";
     result.style.visibility = "visible";
     if(typeof(player1name) === 'object' || typeof(player2name) === 'object')
     {
@@ -235,7 +248,8 @@ function Owon(){
     home[0].style.visibility = "visible";
     wasResult = true;
     turn.innerHTML = initialSign +"'s turn";
-    turn.style.visibility = "hidden";   
+    turn.style.visibility = "hidden";  
+    resultDeclared = true; 
 }
 function myfunction(x){
     if(x == "topleft"){
@@ -463,6 +477,9 @@ function myfunction(x){
 
 reset[0].onclick = function() {resetall()};
 function resetall(){
+    resultDeclared = false;
+    mute.style.visibility = "visible";
+    mutebutton.style.visibility = "visible";
     home[0].style.visibility = "hidden";
     for(var i=0; i<9; i++) checkFilling[i]=0;
     box1.innerHTML="";
@@ -731,7 +748,9 @@ var resHide = false;
 function checkifWon(){
     resHide = false;
     if((board[0][0]==board[0][1] && board[0][0] == board[0][2]) && board[0][0] == 'X' ) {
-        audioPlay();;
+        audioPlay();
+        mute.style.visibility = "hidden";
+        mutebutton.style.visibility = "hidden";
         scoreX++;
         box1.style.backgroundColor = "#071E54";
         box2.style.backgroundColor = "#071E54";
@@ -744,7 +763,9 @@ function checkifWon(){
         resHide = true;
     }
     if((board[1][0]==board[1][1] && board[1][0] == board[1][2]) && board[1][0] == 'X' ) {
-        audioPlay();;
+        audioPlay();
+        mute.style.visibility = "hidden";
+        mutebutton.style.visibility = "hidden";
         scoreX++;
         box4.style.backgroundColor = "#071E54";
         box5.style.backgroundColor = "#071E54";
@@ -757,7 +778,9 @@ function checkifWon(){
         resHide = true;
     }
     if((board[2][0]==board[2][1] && board[2][0] == board[2][2]) && board[2][0] == 'X' ) {
-        audioPlay();;
+        audioPlay();
+        mute.style.visibility = "hidden";
+        mutebutton.style.visibility = "hidden";
         scoreX++;
         box7.style.backgroundColor = "#071E54";
         box8.style.backgroundColor = "#071E54";
@@ -770,7 +793,9 @@ function checkifWon(){
         resHide = true;
     }
     if((board[0][0]==board[1][0] && board[0][0] == board[2][0]) && board[2][0] == 'X' ) {
-        audioPlay();;
+        audioPlay();
+        mute.style.visibility = "hidden";
+        mutebutton.style.visibility = "hidden";
         scoreX++;
         box1.style.backgroundColor = "#071E54";
         box4.style.backgroundColor = "#071E54";
@@ -783,7 +808,9 @@ function checkifWon(){
         resHide = true;
     }
     if((board[0][1]==board[1][1] && board[0][1] == board[2][1]) && board[0][1] == 'X' ) {
-        audioPlay();;
+        audioPlay();
+        mute.style.visibility = "hidden";
+        mutebutton.style.visibility = "hidden";
         scoreX++;
         box2.style.backgroundColor = "#071E54";
         box5.style.backgroundColor = "#071E54";
@@ -796,7 +823,9 @@ function checkifWon(){
         resHide = true;
     }
     if((board[0][2]==board[1][2] && board[0][2] == board[2][2]) && board[0][2] == 'X' ) {
-        audioPlay();;
+        audioPlay();
+        mute.style.visibility = "hidden";
+        mutebutton.style.visibility = "hidden";
         scoreX++;
         box3.style.backgroundColor = "#071E54";
         box6.style.backgroundColor = "#071E54";
@@ -809,7 +838,9 @@ function checkifWon(){
         resHide = true;
     }
     if((board[0][0]==board[1][1] && board[0][0] == board[2][2]) && board[0][0] == 'X' ) {
-        audioPlay();;
+        audioPlay();
+        mute.style.visibility = "hidden";
+        mutebutton.style.visibility = "hidden";
         scoreX++;
         box1.style.backgroundColor = "#071E54";
         box5.style.backgroundColor = "#071E54";
@@ -822,7 +853,9 @@ function checkifWon(){
         resHide = true;
     }
     if((board[0][2]==board[1][1] && board[0][2] == board[2][0]) && board[0][2] == 'X' ) {
-        audioPlay();;
+        audioPlay();
+        mute.style.visibility = "hidden";
+        mutebutton.style.visibility = "hidden";
         scoreX++;
         box3.style.backgroundColor = "#071E54";
         box5.style.backgroundColor = "#071E54";
