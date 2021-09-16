@@ -6,7 +6,7 @@
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 body{
-  background-image: url("../static/images/img1.jpeg");
+  background-image: url("img1.jpeg");
   opacity: 0.96;
   background-size:cover;
   overflow: hidden;
@@ -15,7 +15,7 @@ body{
   width: 110vw;
 }
 .bg-image{
-  background-image: url("../static/images/img1.jpeg");
+  background-image: url("img1.jpeg");
   filter:blur(6px);
   -webkit-filter: blur(6px);
   height:100vw;
