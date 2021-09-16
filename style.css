@@ -202,3 +202,8 @@ body{
 header{
   padding-left: 3.5vw;
 }
+#mute{
+  width:45px;
+  height:45px;
+  cursor:pointer;
+}
