@@ -199,6 +199,7 @@ function two_playersgame(){
     box8.onclick = function() {myfunction('bottom')};
     box9.onclick = function() {myfunction('bottomright')};
 }
+
 function Xwon(){
     mute.style.visibility = "hidden";
     mutebutton.style.visibility = "hidden";
@@ -224,6 +225,7 @@ function Xwon(){
     turn.style.visibility = "hidden";
     resultDeclared = true;
 }
+
 function Owon(){
     mute.style.visibility = "hidden";
     mutebutton.style.visibility = "hidden";
@@ -251,6 +253,7 @@ function Owon(){
     turn.style.visibility = "hidden";  
     resultDeclared = true; 
 }
+
 function myfunction(x){
     if(x == "topleft"){
         if(checkFilling[0]==0)
@@ -353,126 +356,124 @@ function myfunction(x){
     }
 
     if((signsOfBoxes[0] == 'X')  && signsOfBoxes[0] == signsOfBoxes[3] && signsOfBoxes[3] == signsOfBoxes[6]){
-        audioPlay();;
+        audioPlay();
         box1.style.backgroundColor = "#071E54";
         box4.style.backgroundColor = "#071E54";
         box7.style.backgroundColor = "#071E54";
         Xwon();
     }
     else if((signsOfBoxes[0] == 'X')  && signsOfBoxes[0] == signsOfBoxes[1] && signsOfBoxes[1] == signsOfBoxes[2]){
-        audioPlay();;
+        audioPlay();
         box1.style.backgroundColor = "#071E54";
         box2.style.backgroundColor = "#071E54";
         box3.style.backgroundColor = "#071E54";
         Xwon();
     }
     else if((signsOfBoxes[3] == 'X')  && signsOfBoxes[3] == signsOfBoxes[4] && signsOfBoxes[4] == signsOfBoxes[5]){
-        audioPlay();;
+        audioPlay();
         box4.style.backgroundColor = "#071E54";
         box5.style.backgroundColor = "#071E54";
         box6.style.backgroundColor = "#071E54";
         Xwon();
     }
     else if((signsOfBoxes[1] == 'X')  && signsOfBoxes[1] == signsOfBoxes[4] && signsOfBoxes[4] == signsOfBoxes[7]){
-        audioPlay();;
+        audioPlay();
         box2.style.backgroundColor = "#071E54";
         box5.style.backgroundColor = "#071E54";
         box8.style.backgroundColor = "#071E54";
         Xwon();
     }
     else if((signsOfBoxes[6] == 'X')  && signsOfBoxes[6] == signsOfBoxes[7] && signsOfBoxes[7] == signsOfBoxes[8]){
-        audioPlay();;
+        audioPlay();
         box7.style.backgroundColor = "#071E54";
         box8.style.backgroundColor = "#071E54";
         box9.style.backgroundColor = "#071E54";
         Xwon();
     }
     else if((signsOfBoxes[2] == 'X')  && signsOfBoxes[2] == signsOfBoxes[5] && signsOfBoxes[5] == signsOfBoxes[8]){
-        audioPlay();;
+        audioPlay();
         box3.style.backgroundColor = "#071E54";
         box6.style.backgroundColor = "#071E54";
         box9.style.backgroundColor = "#071E54";
         Xwon();
     }
     else if((signsOfBoxes[0] == 'X')  && signsOfBoxes[0] == signsOfBoxes[4] && signsOfBoxes[4] == signsOfBoxes[8]){
-        audioPlay();;
+        audioPlay();
         box1.style.backgroundColor = "#071E54";
         box5.style.backgroundColor = "#071E54";
         box9.style.backgroundColor = "#071E54";
         Xwon();
     }
     else if((signsOfBoxes[2] == 'X')  && signsOfBoxes[2] == signsOfBoxes[4] && signsOfBoxes[4] == signsOfBoxes[6]){
-        audioPlay();;
+        audioPlay();
         box3.style.backgroundColor = "#071E54";
         box5.style.backgroundColor = "#071E54";
         box7.style.backgroundColor = "#071E54";
         Xwon();
     }
     else if((signsOfBoxes[0] == 'O')  && signsOfBoxes[0] == signsOfBoxes[3] && signsOfBoxes[3] == signsOfBoxes[6]){
-        audioPlay();;
+        audioPlay();
         box1.style.backgroundColor = "#071E54";
         box4.style.backgroundColor = "#071E54";
         box7.style.backgroundColor = "#071E54";
         Owon();
     }
     else if((signsOfBoxes[0] == 'O')  && signsOfBoxes[0] == signsOfBoxes[1] && signsOfBoxes[1] == signsOfBoxes[2]){
-        audioPlay();;
+        audioPlay();
         box1.style.backgroundColor = "#071E54";
         box2.style.backgroundColor = "#071E54";
         box3.style.backgroundColor = "#071E54";
         Owon();
     }
     else if((signsOfBoxes[3] == 'O')  && signsOfBoxes[3] == signsOfBoxes[4] && signsOfBoxes[4] == signsOfBoxes[5]){
-        audioPlay();;
+        audioPlay();
         box4.style.backgroundColor = "#071E54";
         box5.style.backgroundColor = "#071E54";
         box6.style.backgroundColor = "#071E54";
         Owon();
     }
     else if((signsOfBoxes[1] == 'O')  && signsOfBoxes[1] == signsOfBoxes[4] && signsOfBoxes[4] == signsOfBoxes[7]){
-        audioPlay();;
+        audioPlay();
         box2.style.backgroundColor = "#071E54";
         box5.style.backgroundColor = "#071E54";
         box8.style.backgroundColor = "#071E54";
         Owon();
     }
     else if((signsOfBoxes[6] == 'O')  && signsOfBoxes[6] == signsOfBoxes[7] && signsOfBoxes[7] == signsOfBoxes[8]){
-        audioPlay();;
+        audioPlay();
         box7.style.backgroundColor = "#071E54";
         box8.style.backgroundColor = "#071E54";
         box9.style.backgroundColor = "#071E54";
         Owon();
     }
     else if((signsOfBoxes[2] == 'O')  && signsOfBoxes[2] == signsOfBoxes[5] && signsOfBoxes[5] == signsOfBoxes[8]){
-        audioPlay();;
+        audioPlay();
         box3.style.backgroundColor = "#071E54";
         box6.style.backgroundColor = "#071E54";
         box9.style.backgroundColor = "#071E54";
         Owon();
     }
     else if((signsOfBoxes[0] == 'O')  && signsOfBoxes[0] == signsOfBoxes[4] && signsOfBoxes[4] == signsOfBoxes[8]){
-        audioPlay();;
+        audioPlay();
         box1.style.backgroundColor = "#071E54";
         box5.style.backgroundColor = "#071E54";
         box9.style.backgroundColor = "#071E54";
         Owon();
     }
     else if((signsOfBoxes[2] == 'O')  && signsOfBoxes[2] == signsOfBoxes[4] && signsOfBoxes[4] == signsOfBoxes[6]){
-        audioPlay();;
+        audioPlay();
         box3.style.backgroundColor = "#071E54";
         box5.style.backgroundColor = "#071E54";
         box7.style.backgroundColor = "#071E54";
         Owon();
     }
-        let countnumberOfmoves = 0;
-        for(var i=0; i<9; i++){
-            if(signsOfBoxes[i] == 'O' || signsOfBoxes[i] == 'X') countnumberOfmoves++;
-        }
-        if(countnumberOfmoves == 9 && !wasResult) {
-            result.style.visibility = "visible";
-            result.innerHTML = "Draw";
-            turn.style.visibility = "hidden";
-        }
+    let countnumberOfmoves = 0;
+    for(var i=0; i<9; i++){
+        if(signsOfBoxes[i] == 'O' || signsOfBoxes[i] == 'X') countnumberOfmoves++;
+    }
+    if(countnumberOfmoves == 9 && !wasResult) {
+        show_result();
+    }
 }
 
 reset[0].onclick = function() {resetall()};
@@ -525,6 +526,16 @@ home[0].onclick = function(){goTohome()};
 
 
 /************************************************** ONE PLAYER MODE ****************************************************** */
+function show_result(){
+    audioPlay();
+    mute.style.visibility = "hidden";
+    mutebutton.style.visibility = "hidden";
+    result.style.visibility = "visible";
+    result.innerHTML = "Draw";
+    turn.style.visibility = "hidden";
+    home[0].style.visibility = "visible";
+}
+
 var board = [ [ '_', '_', '_' ],
     			[ '_', '_', '_' ],
     			[ '_', '_', '_' ] ];
@@ -682,10 +693,7 @@ function roboPlays(){
         try { 
             board[bestMove.row][bestMove.col] = 'X';
         } catch (error) {
-            audioPlay();;
-            home[0].style.visibility = "visible";
-            result.style.visibility = "visible";
-            result.innerHTML = "Draw";
+            show_result();
         }
     }
 
@@ -744,7 +752,9 @@ function roboPlays(){
     }
     checkifWon();
 }
+
 var resHide = false;
+
 function checkifWon(){
     resHide = false;
     if((board[0][0]==board[0][1] && board[0][0] == board[0][2]) && board[0][0] == 'X' ) {
@@ -878,13 +888,10 @@ function checkifWon(){
         }
     }
     if(count_numberofO + count_numberofX == 9){
-        audioPlay();;
-        result.style.visibility = "visible";
-        result.innerHTML = "Draw";
-        turn.style.visibility = "hidden";
-        home[0].style.visibility = "visible";
+        show_result();
     }
 }
+
 function one_playergame(){
     if(initialSign == 'O')
     {
