@@ -1,4 +1,4 @@
-# <p align="center">Tic Tak Toe</p>
+# <p align="center">Tic Tac Toe</p>
 
 <p align="center">
 <strong>Tic Tac Toe</strong> project offers a game of Tic Tac Toe with two distinct modes. In the first mode, you can challenge an AI opponent that employs the Minimax algorithm, making it nearly unbeatable. The second mode is designed for playing against a friend. Additionally, the game features a scoring system and a user-friendly interface, ensuring a pleasant and convenient gaming experience.
