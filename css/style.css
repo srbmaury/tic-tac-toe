@@ -151,6 +151,7 @@ body {
   padding: 7px;
   display: none;
   margin: 38px auto 0px;
+  color: black;
   /* margin-left: 4.5vw;
   margin-top: 3px; */
   /* padding-bottom: 0; */
@@ -219,7 +220,7 @@ body {
   background-color: rgb(219, 217, 82);
   padding: 0.6rem;
   visibility: hidden;
-
+  color: black;
   font-weight: 900;
   font-size: 2rem;
   border-radius: 10px;
@@ -235,7 +236,7 @@ body {
   background-color: rgb(219, 217, 82);
   padding: 0.6rem;
   visibility: hidden;
-
+  color: black;
   font-weight: bold;
   font-size: 2rem;
   border-radius: 10px;
